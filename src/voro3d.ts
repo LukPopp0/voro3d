@@ -102,7 +102,7 @@ export namespace Voro3D {
         });
       }
 
-      return cells;
+      return cells.sort((a, b) => (a.particleID < b.particleID ? -1 : 1));
     }
   }
 }
