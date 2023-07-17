@@ -10,9 +10,9 @@ Voro3D is a thin wrapper around the WebAssembly output of the [Voro++ Emscripten
 The module exports just one type and one class. Import the module and create a container instance:
 ```javascript
 import { Voro3D } from 'voro3d';
-const container = new Voro3D.Container(-10, 10, -10, 10, -10, 10, 2, 2, 2);
+const container = await Voro3D.create(-10, 10, -10, 10, -10, 10, 2, 2, 2);
 ```
-The container constructor accepts 9 optionals arguments. The first six arguments define the dimensions of the box (xMin, xMax, yMin, yMax, zMin, zMax). The last three arguments are used for the calculation of the voronoi cells where the box is divided into n sub computation boxes in x, y and z direction.
+Call the asynchronous `create` function to create a new container. The function accepts 9 optionals arguments. The first six arguments define the dimensions of the box (xMin, xMax, yMin, yMax, zMin, zMax). The last three arguments are used for the calculation of the voronoi cells where the box is divided into n respective sub computation boxes in x, y and z direction.
 
 Now, calculate the voronoi cells. The function accepts either an array of vertices or a flattened array:
 ```javascript
@@ -20,7 +20,7 @@ const points = [ /* ... */ ];
 const cells = container.computeCells(points);
 ```
 
-The `cells` output is a list of `Cell` type objects. A cells contains information about their particle id, the coordinate of its particle as well as a list of vertices and faces with vertex indices.
+The `cells` output is a list of `Cell` type objects. A cell contains information about their particle id, the coordinate of its particle as well as a list of vertices and faces with vertex indices.
 
 Find a full example in the `src/test/` folder and have a look at [`voro3d.ts`](./src/voro3d.ts) for the full types.
 
