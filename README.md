@@ -6,6 +6,7 @@ Calculate voronoi cells within a 3D box.
 Voro3D is a thin wrapper around the WebAssembly output of the [Voro++ Emscripten](https://github.com/LukPopp0/Voro-Emscripten) project. It behaves like a regular module and hides loading the main `wasm` file which makes it easier to use. Also, the C++ vector types are converted into regular JavaScript arrays. TypeScript definitions are added as well.
 
 ## Usage
+
 The module exports just one type and one class. Import the module and create a container instance:
 ```javascript
 import { Voro3D } from 'voro3d';
