@@ -5,6 +5,7 @@
   "exports": "./build/voro3d.js",
   "type": "module",
   "scripts": {
+    "prepublish": "yarn build",
     "build": "rollup -c"
   },
   "repository": {

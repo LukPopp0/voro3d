@@ -2,3 +2,4 @@
 /build
 /.vscode
 .prettierrc
+.DS_STORE
