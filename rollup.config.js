@@ -3,7 +3,7 @@ import copy from "rollup-plugin-copy";
 
 export default [
   {
-    input: `src/voro3d.ts`,
+    input: `src/index.ts`,
     plugins: [
       typescript(),
       copy({
