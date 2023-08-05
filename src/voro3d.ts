@@ -73,7 +73,7 @@ export class Voro3D {
     return new Voro3D(voroRaw, xMin, xMax, yMin, yMax, zMin, zMax, nX, nY, nZ);
   }
 
-  computeCells(points: number[][] | number[]): Cell[] {
+  computeCells(points: number[][] | number[], convertToWorld: boolean = false): Cell[] {
     if (points.length === 0) return [];
 
     // Create and fill point storage
@@ -88,7 +88,7 @@ export class Voro3D {
       });
     }
 
-    const cellExports = this.container.computeCells(pointStorage);
+    const cellExports = this.container.computeCells(pointStorage, convertToWorld);
 
     // Convert VoroRaw.CellExport[] to Voro.Cell[]
     const cells: Cell[] = [];

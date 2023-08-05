@@ -1,4 +1,4 @@
-import { Voro3D } from "../../build/voro3d.js";
+import { Voro3D } from "../../build/index.js";
 const points = [
   [0, -4.99995, 0],
   [-3.6899379709983346, -2.5739679448534636, -4.99995],
@@ -13,6 +13,7 @@ const points = [
   [-4.99995, 2.1724260027914855, -1.5834713245348024],
   [1.974399169327309, 4.99995, 0.6252871464344901],
 ];
+const convertToWorld = true;
 const container = await Voro3D.create(-5, 5, -5, 5, -5, 5, 2, 2, 2);
-const cells = container.computeCells(points);
+const cells = container.computeCells(points, convertToWorld);
 console.log({ cells });

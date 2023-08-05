@@ -58,7 +58,7 @@ declare global {
     nX: number;
     nY: number;
     nZ: number;
-    computeCells(points: VectorFloat): VectorCellExport;
+    computeCells(points: VectorFloat, convertToWorld?: boolean): VectorCellExport;
     constructor();
     constructor(
       xMin?: number,
