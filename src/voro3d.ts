@@ -79,9 +79,9 @@ export class Voro3D {
     // Create and fill point storage
     const pointStorage = new this.voroRaw.VectorFloat();
     if (typeof points[0] === 'number') {
-      (points as number[]).forEach((p) => pointStorage.push_back(p));
+      (points as number[]).forEach(p => pointStorage.push_back(p));
     } else {
-      (points as number[][]).forEach((p) => {
+      (points as number[][]).forEach(p => {
         pointStorage.push_back(p[0]);
         pointStorage.push_back(p[1]);
         pointStorage.push_back(p[2]);
@@ -96,8 +96,7 @@ export class Voro3D {
       const ce = cellExports.get(ci);
 
       const vertices: number[] = new Array<number>(ce.vertices.size());
-      for (let vi = 0; vi < ce.vertices.size(); ++vi)
-        vertices[vi] = ce.vertices.get(vi);
+      for (let vi = 0; vi < ce.vertices.size(); ++vi) vertices[vi] = ce.vertices.get(vi);
 
       const faces: number[][] = new Array<number[]>(ce.faces.size());
       for (let fi = 0; fi < ce.faces.size(); ++fi) {
@@ -117,7 +116,11 @@ export class Voro3D {
         vertices,
         faces,
       });
+
+      (ce as any).delete();
     }
+    pointStorage.delete();
+    cellExports.delete();
 
     return cells.sort((a, b) => (a.particleID < b.particleID ? -1 : 1));
   }
