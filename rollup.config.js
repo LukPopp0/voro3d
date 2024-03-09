@@ -7,16 +7,15 @@ export default [
     plugins: [
       typescript(),
       copy({
-        targets: [{ src: "src/voro_raw.wasm", dest: "build" }],
+        targets: [{ src: "src/voro_raw.wasm", dest: "dist" }],
       }),
     ],
     external: ["module"],
     output: [
       {
-        dir: "build",
+        dir: "dist",
         format: "es",
         sourcemap: true,
-        exports: "auto",
       },
     ],
   },
