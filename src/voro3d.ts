@@ -8,6 +8,7 @@ export type Cell = {
   nFaces: number;
   vertices: number[];
   faces: number[][];
+  neighbors: number[];
 };
 
 export class Voro3D {
@@ -107,6 +108,9 @@ export class Voro3D {
         faces[fi] = newFace;
       }
 
+      const neighbors: number[] = new Array<number>(ce.neighbors.size());
+      for (let ni = 0; ni < ce.neighbors.size(); ++ni) neighbors[ni] = ce.neighbors.get(ni);
+
       cells.push({
         particleID: ce.particleID,
         x: ce.x,
@@ -115,6 +119,7 @@ export class Voro3D {
         nFaces: ce.nFaces,
         vertices,
         faces,
+        neighbors
       });
 
       (ce as any).delete();
