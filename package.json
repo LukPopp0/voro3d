@@ -6,8 +6,13 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "prepack": "yarn build",
+    "prepack": "pnpm build",
     "build": "rollup -c"
   },
   "repository": {
