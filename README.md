@@ -22,7 +22,7 @@ const cells = container.computeCells(points, true);
 
 The `cells` output is a list of `Cell` type objects. A cell contains information about their particle id, the coordinate of its particle as well as a list of vertices, faces with vertex indices, and neighboring voronoi cells.
 
-Find a full example in the `src/test/` folder and have a look at [`voro3d.ts`](./src/voro3d.ts) for the full types.
+Find a full example and basic sanity checks in `test/` and have a look at [`voro3d.ts`](./src/voro3d.ts) for the full types.
 
 
 ## License
